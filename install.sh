@@ -5,3 +5,4 @@ ln -s $PWD/.tmux.conf /home/$USER/.tmux.conf
 ln -s $PWD/.bashrc /home/$USER/.bashrc
 
 ./.bash_it/install.sh
+source ~/.bashrc
