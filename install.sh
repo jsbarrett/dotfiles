@@ -17,5 +17,4 @@ ln -s $PWD/.bashrc /home/$USER/.bashrc
 
 ./.bash_it/install.sh --no-modify-config
 ln -s $PWD/themes $PWD/.bash_it/custom/themes
-source ~/.bashrc
 
