@@ -19,13 +19,8 @@ set nocp " no one cares about being compatible with vi
 set whichwrap+=<,>,h,l,[,] " allow keys to wrap to prev/next line when navigating
 filetype plugin on
 
-" netrw stuff for file browsing
-" nnoremap <C-e> :Lexplore<CR>
-" let g:netrw_banner=0 " turn off the unnecessary banner when using netrw
-" let g:netrw_liststyle = 3
-" let g:netrw_browse_split = 4
-" let g:netrw_altv = 1
-" let g:netrw_winsize = 20
+let g:ctrlp_custom_ignore = 'node_modules'
+let g:ctrlp_open_multiple_files = 'i' " when opening multiple files open as hidden buffers
 
 let g:NERDTreeWinSize = 20
 nnoremap <C-e> :NERDTreeToggle<CR>
