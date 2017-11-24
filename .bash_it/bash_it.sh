@@ -11,6 +11,7 @@ case $OSTYPE in
     ;;
 esac
 
+echo $BASH_IT
 # Only set $BASH_IT if it's not already set
 if [ -z "$BASH_IT" ];
 then
