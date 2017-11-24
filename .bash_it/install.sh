@@ -105,27 +105,27 @@ case $OSTYPE in
     ;;
 esac
 
-BACKUP_FILE=$CONFIG_FILE.bak
-echo "Installing bash-it"
-if ! [[ $silent ]] && ! [[ $no_modify_config ]]; then
-  if [ -e "$HOME/$BACKUP_FILE" ]; then
-    echo -e "\033[0;33mBackup file already exists. Make sure to backup your .bashrc before running this installation.\033[0m" >&2
-    while ! [ $silent ];  do
-      read -e -n 1 -r -p "Would you like to overwrite the existing backup? This will delete your existing backup file ($HOME/$BACKUP_FILE) [y/N] " RESP
-      case $RESP in
-      [yY])
-        break
-        ;;
-      [nN]|"")
-        echo -e "\033[91mInstallation aborted. Please come back soon!\033[m"
-        exit 1
-        ;;
-      *)
-        echo -e "\033[91mPlease choose y or n.\033[m"
-        ;;
-      esac
-    done
-  fi
+# BACKUP_FILE=$CONFIG_FILE.bak
+# echo "Installing bash-it"
+# if ! [[ $silent ]] && ! [[ $no_modify_config ]]; then
+#   if [ -e "$HOME/$BACKUP_FILE" ]; then
+#     echo -e "\033[0;33mBackup file already exists. Make sure to backup your .bashrc before running this installation.\033[0m" >&2
+#     while ! [ $silent ];  do
+#       read -e -n 1 -r -p "Would you like to overwrite the existing backup? This will delete your existing backup file ($HOME/$BACKUP_FILE) [y/N] " RESP
+#       case $RESP in
+#       [yY])
+#         break
+#         ;;
+#       [nN]|"")
+#         echo -e "\033[91mInstallation aborted. Please come back soon!\033[m"
+#         exit 1
+#         ;;
+#       *)
+#         echo -e "\033[91mPlease choose y or n.\033[m"
+#         ;;
+#       esac
+#     done
+#   fi
 
 #  while ! [ $silent ]; do
 #    read -e -n 1 -r -p "Would you like to keep your $CONFIG_FILE and append bash-it templates at the end? [y/N] " choice
@@ -148,10 +148,10 @@ if ! [[ $silent ]] && ! [[ $no_modify_config ]]; then
 #      ;;
 #    esac
 #  done
-elif [[ $silent ]] && ! [[ $no_modify_config ]]; then
+# elif [[ $silent ]] && ! [[ $no_modify_config ]]; then
   # backup/new by default
-  backup_new
-fi
+  # backup_new
+# fi
 
 # Load dependencies for enabling components
 source "$BASH_IT/lib/composure.bash"
