@@ -14,10 +14,13 @@ set wildignore+=node_modules/* " when searching files ignore node_modules
 set autoindent " new line will match previous line
 set smartindent " syntax cued indenting
 set breakindent " wrapped lines are indented visually
-set tabstop=4 shiftwidth=4 smarttab expandtab " spaces > tabs
+set tabstop=2 shiftwidth=4 smarttab expandtab " spaces > tabs
 set nocp " no one cares about being compatible with vi
 set whichwrap+=<,>,h,l,[,] " allow keys to wrap to prev/next line when navigating
 filetype plugin on
+
+source ~/.vim/bundle/secure-shell-clipboard/osc52.vim
+vmap <C-c> y:call SendViaOSC52(getreg('"'))<cr>
 
 let g:ctrlp_custom_ignore = 'node_modules'
 let g:ctrlp_open_multiple_files = 'i' " when opening multiple files open as hidden buffers
