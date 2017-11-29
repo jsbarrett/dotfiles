@@ -14,7 +14,7 @@ set wildignore+=node_modules/* " when searching files ignore node_modules
 set autoindent " new line will match previous line
 set smartindent " syntax cued indenting
 set breakindent " wrapped lines are indented visually
-set tabstop=2 shiftwidth=4 smarttab expandtab " spaces > tabs
+set tabstop=2 shiftwidth=2 smarttab expandtab " spaces > tabs
 set nocp " no one cares about being compatible with vi
 set whichwrap+=<,>,h,l,[,] " allow keys to wrap to prev/next line when navigating
 filetype plugin on
