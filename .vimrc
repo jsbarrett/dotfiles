@@ -17,6 +17,7 @@ set breakindent " wrapped lines are indented visually
 set tabstop=2 shiftwidth=2 smarttab expandtab " spaces > tabs
 set nocp " no one cares about being compatible with vi
 set whichwrap+=<,>,h,l,[,] " allow keys to wrap to prev/next line when navigating
+set backspace=indent,eol,start
 filetype plugin on
 
 source ~/.vim/bundle/secure-shell-clipboard/osc52.vim
