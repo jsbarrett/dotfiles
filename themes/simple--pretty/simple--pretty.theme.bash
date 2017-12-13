@@ -39,7 +39,7 @@ else
 fi
 
 function prompt_command() {
-	PS1="${TITLEBAR}${orange}${reset_color}${ORANGE}\w${PURPLE}\[\$(scm_prompt_info)\]${normal} "
+	PS1="${TITLEBAR}${orange}${reset_color}${ORANGE}\W${PURPLE}\[\$(scm_prompt_info)\]${normal} "
 }
 
 # scm themeing
