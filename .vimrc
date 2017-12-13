@@ -23,6 +23,11 @@ filetype plugin on
 source ~/.vim/bundle/secure-shell-clipboard/osc52.vim
 vmap <C-c> y:call SendViaOSC52(getreg('"'))<cr>
 
+if has("autocmd")
+  " remove trailing white spaces on save
+  autocmd BufWritePre * :%s/\s\+$//e
+endif
+
 let g:ctrlp_custom_ignore = 'node_modules'
 let g:ctrlp_open_multiple_files = 'i' " when opening multiple files open as hidden buffers
 
