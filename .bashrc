@@ -84,3 +84,5 @@ export SCM_CHECK=true
 # Load Bash It
 source "$BASH_IT"/bash_it.sh
 
+alias ls="ls --group-directories-first --color=tty"
+
