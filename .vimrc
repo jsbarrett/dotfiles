@@ -11,14 +11,14 @@ set foldlevel=100 " all folds are open by default
 " set path+=**
 set wildmenu " command-line completion shows other options
 set wildignore+=node_modules/* " when searching files ignore node_modules
-set autoindent " new line will match previous line
-set smartindent " syntax cued indenting
-set breakindent " wrapped lines are indented visually
-set tabstop=2 shiftwidth=2 smarttab expandtab " spaces > tabs
 set nocp " no one cares about being compatible with vi
 set whichwrap+=<,>,h,l,[,] " allow keys to wrap to prev/next line when navigating
 set backspace=indent,eol,start
 filetype plugin on
+set tabstop=2 shiftwidth=2 smarttab expandtab " spaces > tabs
+set autoindent " new line will match previous line
+set breakindent " wrapped lines are indented visually
+set smartindent " syntax cued indenting
 
 source ~/.vim/bundle/secure-shell-clipboard/osc52.vim
 vmap <C-c> y:call SendViaOSC52(getreg('"'))<cr>
