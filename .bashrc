@@ -85,4 +85,5 @@ export SCM_CHECK=true
 source "$BASH_IT"/bash_it.sh
 
 alias ls="ls --group-directories-first --color=tty"
+export TERM=xterm-256color
 
