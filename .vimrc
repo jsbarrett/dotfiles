@@ -20,6 +20,8 @@ set autoindent " new line will match previous line
 set breakindent " wrapped lines are indented visually
 set smartindent " syntax cued indenting
 
+autocmd BufWritePre * %s/\s\+$//e " delete trailing whitespace on save
+
 source ~/.vim/bundle/secure-shell-clipboard/osc52.vim
 vmap <C-c> y:call SendViaOSC52(getreg('"'))<cr>
 
