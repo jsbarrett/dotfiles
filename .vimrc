@@ -14,7 +14,7 @@ set wildignore+=node_modules/* " when searching files ignore node_modules
 set nocp " no one cares about being compatible with vi
 set whichwrap+=<,>,h,l,[,] " allow keys to wrap to prev/next line when navigating
 set backspace=indent,eol,start
-filetype plugin on
+filetype plugin on " vim should pay attention to filetype for colors/indenting
 set tabstop=2 shiftwidth=2 smarttab expandtab " spaces > tabs
 set autoindent " new line will match previous line
 set breakindent " wrapped lines are indented visually

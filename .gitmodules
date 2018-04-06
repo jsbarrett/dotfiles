@@ -25,3 +25,9 @@
 [submodule ".bash_it"]
 	path = .bash_it
 	url = https://github.com/Bash-it/bash-it.git
+[submodule "vim-repeat"]
+	path = .vim/bundle/vim-repeat
+	url = https://github.com/tpope/vim-repeat.git
+[submodule "vim-gitgutter"]
+	path = .vim/bundle/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git
