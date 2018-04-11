@@ -1,7 +1,6 @@
 # vim-setup
 
 This is currently my vim, tmux, and bashrc setup.
-Eventually I'll add a branch that will be dedicated with a zsh theme.
 
 ## Install
 You clone this repo and then you just need to cd into it and run the install script:
@@ -17,5 +16,4 @@ And then you can start it back up: `tmux`
 
 ## TODOS
 - Remove bash_it as dependency and simplify bash config
-- Create branch for zsh config
 - Create custom vim color syntax theme (or find a new one, maybe port of An Old Hope)
