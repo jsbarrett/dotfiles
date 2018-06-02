@@ -2,6 +2,9 @@
 
 This is currently my vim, tmux, and bashrc setup.
 
+NOTE:
+I find myself currently using VS Code (with a vim emulation plugin) as my primary editor when local development is an option. But when I need to work on the server then I'll come back to this repo for a way to quickly get up and running with better defaults.
+
 ## Install
 You clone this repo and then you just need to cd into it and run the install script:
 `./install.sh`
