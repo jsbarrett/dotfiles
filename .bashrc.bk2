@@ -1,0 +1,14 @@
+# get colors working in bash
+export TERM=xterm-256color
+
+# get colors working in tmux
+alias tmux="TERM=xterm-256color tmux"
+
+export VISUAL="vim"
+export EDITOR="$VISUAL"
+
+alias ls="ls --color"
+alias ll="ls -A"
+function cd { builtin cd "$@" && ls; }
+
+source ~/.bash-powerline.sh

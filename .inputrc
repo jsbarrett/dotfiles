@@ -1,0 +1,8 @@
+# (tab completion) case insensitive
+set completion-ignore-case on
+# (tab completion) treat hyphens and underscore the same
+set completion-map-case on
+# (tab completion) show all possibilities
+set show-all-if-ambiguous on
+# (tab completion) tab again will go to next possibility in list
+Tab: menu-complete
