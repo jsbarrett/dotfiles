@@ -16,6 +16,7 @@ And then you can start it back up: `tmux`
 
 ## Notes
 - Dependencies managed with git use git submodules. Not sure the best way to install new submodules at this point. I typically just edit the .gitmodules file and then manually git clone them where I need them. Most often they are vim dependencies managed by pathogen and go into the .vim/bundle directory.
+- When installing on a fresh instance of raspbian, be sure to download the full vim; `sudo apt-get install vim-gui-common` and `sudo apt-get install vim-runtime` should fix any errors with having the "Small version without GUI" that comes standard on Raspbian.
 
 ## TODOS
 - Have script check for pre-existing dotfiles and then alert user of them, with option to replace them or to save them as backups.
