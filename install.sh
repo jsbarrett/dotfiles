@@ -8,6 +8,3 @@ ln -s $PWD/.tmux.conf /home/$USER/.tmux.conf
 ln -s $PWD/.bashrc /home/$USER/.bashrc
 ln -s $PWD/.profile /home/$USER/.profile
 
-./.bash_it/install.sh --no-modify-config
-ln -s $PWD/themes $PWD/.bash_it/custom/themes
-
