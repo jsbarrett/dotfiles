@@ -22,9 +22,6 @@
 [submodule ".vim/bundle/vim-trailing-whitespace"]
 	path = .vim/bundle/vim-trailing-whitespace
 	url = https://github.com/bronson/vim-trailing-whitespace.git
-[submodule ".bash_it"]
-	path = .bash_it
-	url = https://github.com/Bash-it/bash-it.git
 [submodule "vim-repeat"]
 	path = .vim/bundle/vim-repeat
 	url = https://github.com/tpope/vim-repeat.git
