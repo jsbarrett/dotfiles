@@ -20,6 +20,10 @@ set autoindent " new line will match previous line
 set breakindent " wrapped lines are indented visually
 set smartindent " syntax cued indenting
 
+set grepprg=git\ grep\ -n " git grep has way faster/better defaults than normal grep when in git projects
+" if you need to change it (because you're not in a git repo then just :set grepprg=grep\ -rn should do the trick
+nnoremap <leader>f :gr! "" \| cw<left><left><left><left><left><left> " this is a shortcut for a reasonable default grepping method in vim
+
 autocmd BufWritePre * %s/\s\+$//e " delete trailing whitespace on save
 
 source ~/.vim/bundle/secure-shell-clipboard/osc52.vim
