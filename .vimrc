@@ -19,6 +19,7 @@ set tabstop=2 shiftwidth=2 smarttab expandtab " spaces > tabs
 set autoindent " new line will match previous line
 set breakindent " wrapped lines are indented visually
 set smartindent " syntax cued indenting
+set noswapfile " get rid of those pesky .swp files
 
 set grepprg=git\ grep\ -n " git grep has way faster/better defaults than normal grep when in git projects
 " if you need to change it (because you're not in a git repo then just :set grepprg=grep\ -rn should do the trick
