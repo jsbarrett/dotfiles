@@ -58,7 +58,7 @@ if &term =~ "xterm"
   endif
 endif
 syntax enable " give me pretty colors for syntax
-colorscheme monokai " decent colorscheme
+colorscheme OceanicNext " decent colorscheme
 
 if &term =~ '256color'
   " disable Background Color Erase (BCE) so that color schemes
