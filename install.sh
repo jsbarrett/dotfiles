@@ -16,6 +16,7 @@ then
   git clone https://github.com/bronson/vim-trailing-whitespace.git .vim/bundle/vim-trailing-whitespace
   git clone https://github.com/tpope/vim-repeat.git .vim/bundle/vim-repeat
   git clone https://github.com/airblade/vim-gitgutter.git .vim/bundle/vim-gitgutter
+  git clone https://github.com/edkolev/tmuxline.vim.git .vim/bundle/tmuxline
 fi
 echo ""
 echo "----------"
