@@ -48,6 +48,10 @@ au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
 
 " this section is detecting the terminal to make sure to use 256 colors in vim
 if &term =~ "xterm"
+  " change cursor to a line when in insert mode
+  let &t_SI = "\<esc>[5 q"
+  let &t_EI = "\<esc>[2 q"
+
   " 256 colors
   let &t_Co = 256
   " restore screen after quitting
