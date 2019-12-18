@@ -87,7 +87,7 @@ then
   npm install coc-tsserver coc-json coc-html coc-css --global-style --ignore-scripts --no-bin-links --no-package-lock --only=prod
 fi
 
-cd .vim/bundle/coc.nvim
+cd ~/.vim/bundle/coc.nvim
 ./install.sh
 
 echo ""
