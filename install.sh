@@ -6,19 +6,26 @@ echo "Do you want to clone vim plugins? (y/n)"
 read
 if [[ $REPLY == 'y' ]]
 then
-  git clone https://github.com/scrooloose/nerdtree.git .vim/bundle/nerdtree
+  git clone https://github.com/neoclide/coc.nvim.git .vim/bundle/coc.nvim
   git clone https://github.com/ctrlpvim/ctrlp.vim.git .vim/bundle/ctrlp.vim
   git clone https://github.com/mattn/emmet-vim.git .vim/bundle/emmet-vim
+  git clone https://github.com/scrooloose/nerdtree.git .vim/bundle/nerdtree
+  # secure shell is included in the repo, no need to clone
+  git clone https://github.com/edkolev/tmuxline.vim.git .vim/bundle/tmuxline
+  git clone https://github.com/vim-airline/vim-airline.git .vim/bundle/vim-airline
   git clone https://github.com/ConradIrwin/vim-bracketed-paste.git .vim/bundle/vim-bracketed-paste
   git clone https://github.com/tpope/vim-commentary.git .vim/bundle/vim-commentary
-  git clone https://github.com/sheerun/vim-polyglot.git .vim/bundle/vim-polyglot
-  git clone https://github.com/tpope/vim-surround.git .vim/bundle/vim-surround
-  git clone https://github.com/bronson/vim-trailing-whitespace.git .vim/bundle/vim-trailing-whitespace
-  git clone https://github.com/tpope/vim-repeat.git .vim/bundle/vim-repeat
+  git clone https://github.com/tpope/vim-fugitive.git .vim/bundle/vim-fugitive
   git clone https://github.com/airblade/vim-gitgutter.git .vim/bundle/vim-gitgutter
-  git clone https://github.com/vim-airline/vim-airline.git .vim/bundle/vim-airline
-  git clone https://github.com/edkolev/tmuxline.vim.git .vim/bundle/tmuxline
+  git clone https://github.com/sheerun/vim-polyglot.git .vim/bundle/vim-polyglot
+  git clone https://github.com/tpope/vim-repeat.git .vim/bundle/vim-repeat
+  git clone https://github.com/tpope/vim-surround.git .vim/bundle/vim-surround
+  git clone https://github.com/christoomey/vim-tmux-navigator.git .vim/bundle/vim-tmux-navigator
+  git clone https://github.com/bronson/vim-trailing-whitespace.git .vim/bundle/vim-trailing-whitespace
 fi
+
+./.vim/bundle/coc.nvim/install.sh
+
 echo ""
 echo "----------"
 
