@@ -22,6 +22,15 @@ fi
 echo ""
 echo "----------"
 
+echo "Do you want to clone tmux clipboard plugin? (y/n)"
+read
+if [[ $REPLY == 'y' ]]
+then
+  git clone https://github.com/tmux-plugins/tmux-yank.git .tmux/tmux-yank
+fi
+echo ""
+echo "----------"
+
 function check_file () {
   if [[ -f /home/$USER/$1 ]]
   then
