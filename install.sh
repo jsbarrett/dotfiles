@@ -24,8 +24,6 @@ then
   git clone https://github.com/bronson/vim-trailing-whitespace.git .vim/bundle/vim-trailing-whitespace
 fi
 
-./.vim/bundle/coc.nvim/install.sh
-
 echo ""
 echo "----------"
 
@@ -71,6 +69,8 @@ check_file ".vimrc"
 check_file ".tmux.conf"
 check_file ".bashrc"
 check_file ".profile"
+check_file ".vim"
+check_file ".tmux"
 
 echo "Do you want to install coc.nvim dependencies (tsserver, json, html, css)? (y/n)"
 read
@@ -86,6 +86,9 @@ then
 # Change extension names to the extensions you need
   npm install coc-tsserver coc-json coc-html coc-css --global-style --ignore-scripts --no-bin-links --no-package-lock --only=prod
 fi
+
+cd .vim/bundle/coc.nvim
+./install.sh
 
 echo ""
 echo "----------"
