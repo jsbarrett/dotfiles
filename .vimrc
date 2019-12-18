@@ -33,6 +33,10 @@ autocmd BufWritePre * %s/\s\+$//e " delete trailing whitespace on save
 source ~/.vim/bundle/secure-shell-clipboard/osc52.vim
 vmap <C-c> y:call SendViaOSC52(getreg('"'))<cr>
 
+" gives ability to toggle comments like vs code
+nnoremap <C-_> :Commentary<cr>
+vnoremap <C-_> :Commentary<cr>
+
 if has("autocmd")
   " remove trailing white spaces on save
   autocmd BufWritePre * :%s/\s\+$//e
