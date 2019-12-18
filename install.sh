@@ -72,6 +72,24 @@ check_file ".tmux.conf"
 check_file ".bashrc"
 check_file ".profile"
 
+echo "Do you want to install coc.nvim dependencies (tsserver, json, html, css)? (y/n)"
+read
+if [[ $REPLY == 'y' ]]
+then
+# Install extensions for coc.nvim
+  mkdir -p ~/.config/coc/extensions
+  cd ~/.config/coc/extensions
+  if [ ! -f package.json ]
+  then
+    echo '{"dependencies":{}}'> package.json
+  fi
+# Change extension names to the extensions you need
+  npm install coc-tsserver coc-json coc-html coc-css --global-style --ignore-scripts --no-bin-links --no-package-lock --only=prod
+fi
+
+echo ""
+echo "----------"
+
 echo ""
 echo "DONE"
 echo ""
