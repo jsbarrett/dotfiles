@@ -5,6 +5,7 @@ set colorcolumn=80
 set incsearch " while typing search start highlighting matches
 set hlsearch " highlight all the matches when searching
 set mouse=a " screw the purists, I like the option of using my mouse
+set ttymouse=xterm2 " allow mouse to change pane sizes
 set cursorline " highlights the line the cursor is on slightly
 set foldmethod=indent " allows one to fold the code based on indentation
 set foldlevel=100 " all folds are open by default
@@ -20,10 +21,12 @@ set autoindent " new line will match previous line
 set breakindent " wrapped lines are indented visually
 set smartindent " syntax cued indenting
 set noswapfile " get rid of those pesky .swp files
+set clipboard=unnamed " sets default yank register to the system clipboard
 
 set grepprg=git\ grep\ -n " git grep has way faster/better defaults than normal grep when in git projects
 " if you need to change it (because you're not in a git repo then just :set grepprg=grep\ -rn should do the trick
-nnoremap <leader>f :gr! "" \| cw<left><left><left><left><left><left> " this is a shortcut for a reasonable default grepping method in vim
+" the following is a shortcut for a reasonable default grepping method in vim
+nnoremap <leader>f :gr! "" \| cw<left><left><left><left><left><left>
 
 autocmd BufWritePre * %s/\s\+$//e " delete trailing whitespace on save
 
