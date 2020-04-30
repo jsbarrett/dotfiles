@@ -7,7 +7,7 @@ read
 if [[ $REPLY == 'y' ]]
 then
   git clone https://github.com/neoclide/coc.nvim.git .vim/bundle/coc.nvim
-  git clone https://github.com/ctrlpvim/ctrlp.vim.git .vim/bundle/ctrlp.vim
+  # git clone https://github.com/ctrlpvim/ctrlp.vim.git .vim/bundle/ctrlp.vim
   git clone https://github.com/mattn/emmet-vim.git .vim/bundle/emmet-vim
   git clone https://github.com/scrooloose/nerdtree.git .vim/bundle/nerdtree
   # secure shell is included in the repo, no need to clone
@@ -89,6 +89,17 @@ fi
 
 cd ~/.vim/bundle/coc.nvim
 ./install.sh
+
+echo ""
+echo "----------"
+
+echo "Do you want to install fzf? (y/n)"
+read
+if [[ $REPLY == 'y' ]]
+then
+  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+  ~/.fzf/install
+fi
 
 echo ""
 echo "----------"
