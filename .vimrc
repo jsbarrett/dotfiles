@@ -20,13 +20,15 @@ set breakindent " wrapped lines are indented visually
 set smartindent " syntax cued indenting
 set noswapfile " get rid of those pesky .swp files
 set clipboard^=unnamed,unnamedplus " sets default yank register to the system clipboard
+packadd cfilter
 
-set grepprg=git\ grep\ -n " git grep has way faster/better defaults than normal grep when in git projects
+" set grepprg=git\ grep\ -n " git grep has way faster/better defaults than normal grep when in git projects
+set grepprg=rg\ -S\ --vimgrep
 " if you need to change it (because you're not in a git repo then just :set grepprg=grep\ -rn should do the trick
 " the following is a shortcut for a reasonable default grepping method in vim
 nnoremap <leader>f :gr! "" \| cw<left><left><left><left><left><left>
 
-set rtp+=/home/vagrant/.fzf
+set rtp+=~/.fzf
 nnoremap <C-p> :FZF<CR>
 
 autocmd BufWritePre * %s/\s\+$//e " delete trailing whitespace on save
@@ -42,10 +44,6 @@ au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
 
 " this section is detecting the terminal to make sure to use 256 colors in vim
 if &term =~ "xterm"
-  " change cursor to a line when in insert mode
-  let &t_SI = "\<esc>[5 q"
-  let &t_EI = "\<esc>[2 q"
-
   " 256 colors
   let &t_Co = 256
   " restore screen after quitting
