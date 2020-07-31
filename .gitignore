@@ -1,3 +1,4 @@
 .vim/bundle
 .tmux/tmux-yank
 .vim/.netrwhist
+.vim/undo
