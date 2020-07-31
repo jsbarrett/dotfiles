@@ -7,10 +7,8 @@ read
 if [[ $REPLY == 'y' ]]
 then
   git clone https://github.com/neoclide/coc.nvim.git .vim/bundle/coc.nvim
-  # git clone https://github.com/ctrlpvim/ctrlp.vim.git .vim/bundle/ctrlp.vim
   git clone https://github.com/mattn/emmet-vim.git .vim/bundle/emmet-vim
   git clone https://github.com/scrooloose/nerdtree.git .vim/bundle/nerdtree
-  # secure shell is included in the repo, no need to clone
   git clone https://github.com/edkolev/tmuxline.vim.git .vim/bundle/tmuxline
   git clone https://github.com/vim-airline/vim-airline.git .vim/bundle/vim-airline
   git clone https://github.com/ConradIrwin/vim-bracketed-paste.git .vim/bundle/vim-bracketed-paste
