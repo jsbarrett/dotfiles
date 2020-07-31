@@ -3,6 +3,7 @@
 " ------------------------------------------------------------------ "
 
 set number " show line numbers on the left
+set cursorline " highlights the line the cursor is on slightly
 set incsearch " while typing search start highlighting matches
 set hlsearch " highlight all the matches when searching
 set mouse=a " screw the purists, I like the option of using my mouse
@@ -24,7 +25,6 @@ packadd cfilter " allows you to filter through the quickfix list
 " ------------------------------------------------------------------ "
 
 set colorcolumn=80
-set cursorline " highlights the line the cursor is on slightly
 set list " displays list characters (tabs, spaces, etc)
 set listchars=tab:>- " changes tabs to be >--- visually
 
@@ -38,13 +38,6 @@ set clipboard^=unnamed,unnamedplus " sets default yank register to the system cl
 " reset to default with :set grepprg=grep\ -rn
 " ripgrep is much faster; can use git grep if rg is not installed
 set grepprg=rg\ -S\ --vimgrep
-
-" ------------------------------------------------------------------ "
-"                             MAPPINGS                               "
-" ------------------------------------------------------------------ "
-
-" the following is a shortcut for a reasonable default grepping method in vim
-nnoremap <leader>f :grep! "" \| cwindow<left><left><left><left><left><left><left><left><left><left><left>
 
 " ------------------------------------------------------------------ "
 "                           AUTOCOMMANDS                             "
@@ -75,7 +68,6 @@ command NF NERDTreeFind
 " ------------------------------------------------------------------ "
 
 set rtp+=~/.fzf
-set rtp+=/usr/local/opt/fzf
 nnoremap <C-p> :FZF<CR>
 
 " ------------------------------------------------------------------ "
@@ -113,3 +105,26 @@ endif
 " ------------------------------------------------------------------ "
 
 execute pathogen#infect()
+
+" ------------------------------------------------------------------ "
+"                    MAPPINGS/WHICH KEY SETTINGS                     "
+" ------------------------------------------------------------------ "
+
+let g:mapleader = "\<SPACE>"
+set timeoutlen=500
+
+" the following is a shortcut for a reasonable default grepping method in vim
+nnoremap <leader>g :grep! "" \| cwindow<left><left><left><left><left><left><left><left><left><left><left>
+nnoremap <leader>f :FZF<CR>
+nnoremap <leader>e :NERDTreeToggle<CR>
+
+nnoremap <silent> <leader> :WhichKey '<SPACE>'<CR>
+call which_key#register("<SPACE>", "g:which_key_map")
+
+let g:which_key_map = {}
+let g:which_key_map["g"] = "grep"
+let g:which_key_map["f"] = "find file"
+let g:which_key_map["e"] = "explore files"
+let g:which_key_map["*"] = "which_key_ignore"
+
+let g:which_key_map["h"] = { "name": "which_key_ignore" }

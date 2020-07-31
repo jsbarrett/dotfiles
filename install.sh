@@ -23,6 +23,7 @@ then
   git clone https://github.com/christoomey/vim-tmux-navigator.git .vim/bundle/vim-tmux-navigator
   git clone https://github.com/bronson/vim-trailing-whitespace.git .vim/bundle/vim-trailing-whitespace
   git clone https://github.com/bronson/vim-visual-star-search.git .vim/bundle/vim-visual-star-search
+  git clone https://github.com/liuchengxu/vim-which-key.git .vim/bundle/vim-which-key
 fi
 
 echo ""
