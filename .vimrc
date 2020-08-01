@@ -60,6 +60,7 @@ let NERDTreeMinimalUI = 1
 let NERDTreeMouseMode = 3
 let g:NERDTreeDirArrowExpandable = ' '
 let g:NERDTreeDirArrowCollapsible = ' '
+
 nnoremap <C-e> :NERDTreeToggle<CR>
 command NF NERDTreeFind
 
@@ -125,6 +126,6 @@ let g:which_key_map = {}
 let g:which_key_map["g"] = "grep"
 let g:which_key_map["f"] = "find file"
 let g:which_key_map["e"] = "explore files"
-let g:which_key_map["*"] = "which_key_ignore"
 
+let g:which_key_map["*"] = "which_key_ignore"
 let g:which_key_map["h"] = { "name": "which_key_ignore" }
