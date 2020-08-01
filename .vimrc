@@ -2,34 +2,34 @@
 "                           BASIC DEFAULTS                           "
 " ------------------------------------------------------------------ "
 
-set number " show line numbers on the left
-set cursorline " highlights the line the cursor is on slightly
-set incsearch " while typing search start highlighting matches
-set hlsearch " highlight all the matches when searching
-set mouse=a " screw the purists, I like the option of using my mouse
-set ttymouse=xterm2 " allow mouse to change pane sizes
-set foldmethod=indent " allows one to fold the code based on indentation
-set foldlevel=100 " all folds are open by default
-set wildmenu " command-line completion shows other options
-set nocp " no one cares about being compatible with vi
-set whichwrap+=<,>,h,l,[,] " allow keys to wrap to prev/next line when navigating
-set backspace=indent,eol,start
-filetype plugin on " vim should pay attention to filetype for colors/indenting
 set autoindent " new line will match previous line
+set backspace=indent,eol,start " backspace as you would expect
 set breakindent " wrapped lines are indented visually
+set cursorline " highlights the line the cursor is on slightly
+set foldlevel=100 " all folds are open by default
+set foldmethod=indent " allows one to fold the code based on indentation
+set hlsearch " highlight all the matches when searching
+set incsearch " while typing search start highlighting matches
+set mouse=a " I like the option of using my mouse
+set nocp " don't try to be compatible with vi
+set number " show line numbers on the left
 set smartindent " syntax cued indenting
+set ttymouse=xterm2 " allow mouse to change pane sizes
+set whichwrap+=<,>,h,l,[,] " allow keys to wrap to prev/next line when navigating
+set wildmenu " command-line completion shows other options
+filetype plugin on " vim should pay attention to filetype for colors/indenting
 packadd cfilter " allows you to filter through the quickfix list
 
 " ------------------------------------------------------------------ "
 "                       PERSONAL PREFERENCES                         "
 " ------------------------------------------------------------------ "
 
-set colorcolumn=80
+set colorcolumn=80 " signal when writing long lines of text
 set list " displays list characters (tabs, spaces, etc)
 set listchars=tab:>- " changes tabs to be >--- visually
 
-set undodir=~/.vim/undo//
-set undofile
+set undodir=~/.vim/undo// " set undo history folder
+set undofile " save undo history for each file
 set noswapfile " get rid of those pesky .swp files
 
 set tabstop=2 shiftwidth=2 smarttab expandtab " spaces > tabs
