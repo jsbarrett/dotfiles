@@ -6,7 +6,7 @@ do
   then
     cd ./.vim/bundle/$PLUGIN_NAME
     echo "Pulling $PLUGIN_NAME repo for any updates"
-    git pull
+    git pull origin master
     cd -
   fi
 done
