@@ -12,6 +12,16 @@ fi
 echo ""
 echo "----------"
 
+echo "Do you want to create an undo history folder in .vim/ ? (y/n)"
+read
+if [[ $REPLY == 'y' ]]
+then
+  mkdir ./.vim/undo
+fi
+
+echo ""
+echo "----------"
+
 echo "Do you want to clone tmux clipboard plugin? (y/n)"
 read
 if [[ $REPLY == 'y' ]]
