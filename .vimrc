@@ -118,6 +118,7 @@ set timeoutlen=500
 nnoremap <leader>g :grep! "" \| cwindow<left><left><left><left><left><left><left><left><left><left><left>
 nnoremap <leader>f :FZF<CR>
 nnoremap <leader>e :NERDTreeToggle<CR>
+nnoremap <leader>b :Buffers<CR>
 
 nnoremap <silent> <leader> :WhichKey '<SPACE>'<CR>
 call which_key#register("<SPACE>", "g:which_key_map")
@@ -126,6 +127,7 @@ let g:which_key_map = {}
 let g:which_key_map["g"] = "grep"
 let g:which_key_map["f"] = "find file"
 let g:which_key_map["e"] = "explore files"
+let g:which_key_map["b"] = "switch buffer"
 
 let g:which_key_map["*"] = "which_key_ignore"
 let g:which_key_map["h"] = { "name": "which_key_ignore" }
