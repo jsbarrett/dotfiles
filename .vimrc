@@ -12,32 +12,32 @@ set hlsearch " highlight all the matches when searching
 set incsearch " while typing search start highlighting matches
 set mouse=a " I like the option of using my mouse
 set nocp " don't try to be compatible with vi
-set number " show line numbers on the left
 set smartindent " syntax cued indenting
-set ttymouse=xterm2 " allow mouse to change pane sizes
 set whichwrap+=<,>,h,l,[,] " allow keys to wrap to prev/next line when navigating
 set wildmenu " command-line completion shows other options
 filetype plugin on " vim should pay attention to filetype for colors/indenting
 packadd cfilter " allows you to filter through the quickfix list
+if !has('nvim')
+  set ttymouse=xterm2 " allow mouse to change pane sizes in vim
+endif
 
 " ------------------------------------------------------------------ "
 "                       PERSONAL PREFERENCES                         "
 " ------------------------------------------------------------------ "
 
-set colorcolumn=80 " signal when writing long lines of text
-set list " displays list characters (tabs, spaces, etc)
-set listchars=tab:>- " changes tabs to be >--- visually
-
-set undodir=~/.vim/undo// " set undo history folder
-set undofile " save undo history for each file
-set noswapfile " get rid of those pesky .swp files
-
-set tabstop=2 shiftwidth=2 smarttab expandtab " spaces > tabs
 set clipboard^=unnamed,unnamedplus " sets default yank register to the system clipboard
-
+set colorcolumn=80 " signal when writing long lines of text
 " reset to default with :set grepprg=grep\ -rn
 " ripgrep is much faster; can use git grep if rg is not installed
 set grepprg=rg\ -S\ --vimgrep
+set list " displays list characters (tabs, spaces, etc)
+set listchars=tab:>- " changes tabs to be >- visually
+set nonumber " don't show line numbers on the left
+set noswapfile " get rid of those pesky .swp files
+set tabstop=2 shiftwidth=2 smarttab expandtab " spaces > tabs
+set ttimeoutlen=25 " improve speed from delay after hitting Escape
+set undodir=~/.vim/undo// " set undo history folder
+set undofile " save undo history for each file
 
 " ------------------------------------------------------------------ "
 "                           AUTOCOMMANDS                             "
@@ -114,20 +114,26 @@ endif
 let g:mapleader = "\<SPACE>"
 set timeoutlen=500
 
-" the following is a shortcut for a reasonable default grepping method in vim
-nnoremap <leader>g :grep! "" \| cwindow<left><left><left><left><left><left><left><left><left><left><left>
-nnoremap <leader>f :FZF<CR>
+" the following mapping is a shortcut for a reasonable default grepping method in vim
+nnoremap <leader>f :grep! "" \| cwindow<S-left><S-left><left><left>
+nnoremap <leader>p :FZF<CR>
 nnoremap <leader>e :NERDTreeToggle<CR>
-nnoremap <leader>b :History<CR>
+nnoremap <leader>b :Buffers<CR>
 
 nnoremap <silent> <leader> :WhichKey '<SPACE>'<CR>
 call which_key#register("<SPACE>", "g:which_key_map")
 
 let g:which_key_map = {}
-let g:which_key_map["g"] = "grep"
-let g:which_key_map["f"] = "find file"
-let g:which_key_map["e"] = "explore files"
+let g:which_key_map["f"] = "grep"
+let g:which_key_map["p"] = "find file"
+let g:which_key_map["e"] = "explorer"
 let g:which_key_map["b"] = "switch buffer"
 
 let g:which_key_map["*"] = "which_key_ignore"
 let g:which_key_map["h"] = { "name": "which_key_ignore" }
+
+" ------------------------------------------------------------------ "
+"                       EXTERNAL PREFERENCES                         "
+" ------------------------------------------------------------------ "
+source $HOME/.vim/custom-preferences.vim
+
