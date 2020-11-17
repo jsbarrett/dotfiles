@@ -27,8 +27,6 @@ endif
 
 set clipboard^=unnamed,unnamedplus " sets default yank register to the system clipboard
 set colorcolumn=80 " signal when writing long lines of text
-" reset to default with :set grepprg=grep\ -rn
-" ripgrep is much faster; can use git grep if rg is not installed
 set grepprg=rg\ -S\ --vimgrep
 set list " displays list characters (tabs, spaces, etc)
 set listchars=tab:>- " changes tabs to be >- visually
@@ -38,6 +36,7 @@ set tabstop=2 shiftwidth=2 smarttab expandtab " spaces > tabs
 set ttimeoutlen=25 " improve speed from delay after hitting Escape
 set undodir=~/.vim/undo// " set undo history folder
 set undofile " save undo history for each file
+let g:netrw_altfile = 1 " make ctrl-6 go to previous file and not netrw
 
 " ------------------------------------------------------------------ "
 "                           AUTOCOMMANDS                             "
@@ -50,19 +49,6 @@ endif
 
 " remember last line/position when reopening a file
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
-
-" ------------------------------------------------------------------ "
-"                        NERDTREE SETTINGS                           "
-" ------------------------------------------------------------------ "
-
-let g:NERDTreeWinSize = 30
-let NERDTreeMinimalUI = 1
-let NERDTreeMouseMode = 3
-let g:NERDTreeDirArrowExpandable = ' '
-let g:NERDTreeDirArrowCollapsible = ' '
-
-nnoremap <C-e> :NERDTreeToggle<CR>
-command NF NERDTreeFind
 
 " ------------------------------------------------------------------ "
 "                           FZF SETTINGS                             "
@@ -112,13 +98,12 @@ endif
 " ------------------------------------------------------------------ "
 
 let g:mapleader = "\<SPACE>"
-set timeoutlen=500
+set timeoutlen=300
 
 " the following mapping is a shortcut for a reasonable default grepping method in vim
 nnoremap <leader>f :grep! "" \| cwindow<S-left><S-left><left><left>
 nnoremap <leader>p :FZF<CR>
-nnoremap <leader>e :NERDTreeToggle<CR>
-nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>e :e .<CR>
 
 nnoremap <silent> <leader> :WhichKey '<SPACE>'<CR>
 call which_key#register("<SPACE>", "g:which_key_map")
@@ -127,7 +112,6 @@ let g:which_key_map = {}
 let g:which_key_map["f"] = "grep"
 let g:which_key_map["p"] = "find file"
 let g:which_key_map["e"] = "explorer"
-let g:which_key_map["b"] = "switch buffer"
 
 let g:which_key_map["*"] = "which_key_ignore"
 let g:which_key_map["h"] = { "name": "which_key_ignore" }
