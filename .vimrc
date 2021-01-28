@@ -4,11 +4,6 @@
 
 set autoindent " new line will match previous line
 set backspace=indent,eol,start " backspace as you would expect
-set breakindent " wrapped lines are indented visually
-set cursorline " highlights the line the cursor is on slightly
-set foldlevel=100 " all folds are open by default
-set foldmethod=indent " allows one to fold the code based on indentation
-set hlsearch " highlight all the matches when searching
 set incsearch " while typing search start highlighting matches
 set mouse=a " I like the option of using my mouse
 set nocp " don't try to be compatible with vi
@@ -25,12 +20,14 @@ endif
 "                       PERSONAL PREFERENCES                         "
 " ------------------------------------------------------------------ "
 
+set breakindent " wrapped lines are indented visually
 set clipboard^=unnamed,unnamedplus " sets default yank register to the system clipboard
 set colorcolumn=80 " signal when writing long lines of text
+set foldlevel=100 " all folds are open by default
+set foldmethod=indent " allows one to fold the code based on indentation
 set grepprg=rg\ -S\ --vimgrep
 set list " displays list characters (tabs, spaces, etc)
 set listchars=tab:>- " changes tabs to be >- visually
-set nonumber " don't show line numbers on the left
 set noswapfile " get rid of those pesky .swp files
 set tabstop=2 shiftwidth=2 smarttab expandtab " spaces > tabs
 set ttimeoutlen=25 " improve speed from delay after hitting Escape
@@ -104,17 +101,19 @@ set timeoutlen=300
 nnoremap <leader>f :grep! "" \| cwindow<S-left><S-left><left><left>
 nnoremap <leader>p :FZF<CR>
 nnoremap <leader>e :e .<CR>
+nnoremap <leader>h :set hlsearch!<cr>
 
 nnoremap <silent> <leader> :WhichKey '<SPACE>'<CR>
 call which_key#register("<SPACE>", "g:which_key_map")
 
 let g:which_key_map = {}
+let g:which_key_map["*"] = "which_key_ignore"
+let g:which_key_map["h"] = { "name": "which_key_ignore" }
+
 let g:which_key_map["f"] = "grep"
 let g:which_key_map["p"] = "find file"
 let g:which_key_map["e"] = "explorer"
-
-let g:which_key_map["*"] = "which_key_ignore"
-let g:which_key_map["h"] = { "name": "which_key_ignore" }
+let g:which_key_map["h"] = "highlight"
 
 " ------------------------------------------------------------------ "
 "                       EXTERNAL PREFERENCES                         "
