@@ -1,4 +1,4 @@
-# vim-setup
+# dotfiles
 
 This is currently my vim, tmux, and bashrc setup.
 
