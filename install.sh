@@ -3,7 +3,7 @@
 date=$(date '+%Y-%m-%d--%H-%M-%S')
 
 echo "Creating .custom-preferences.vim file"
-touch /home/$USER/.vim/custom-preferences.vim
+touch ./.vim/custom-preferences.vim
 
 echo "Do you want to clone vim plugins? (y/n)"
 read
