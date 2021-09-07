@@ -39,10 +39,10 @@ let g:netrw_altfile = 1 " make ctrl-6 go to previous file and not netrw
 "                           AUTOCOMMANDS                             "
 " ------------------------------------------------------------------ "
 
-if has("autocmd")
-  " remove trailing white spaces on save
-  autocmd BufWritePre * :%s/\s\+$//e
-endif
+" if has("autocmd")
+"   " remove trailing white spaces on save
+"   autocmd BufWritePre * :%s/\s\+$//e
+" endif
 
 " remember last line/position when reopening a file
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
@@ -102,6 +102,8 @@ nnoremap <leader>f :grep! "" \| cwindow<S-left><S-left><left><left>
 nnoremap <leader>p :FZF<CR>
 nnoremap <leader>e :e .<CR>
 nnoremap <leader>h :set hlsearch!<cr>
+nnoremap <leader>df iconst  = () => {<cr><bs>}<cr><esc>2kf a
+nnoremap <leader>dt itest('', () => {<cr>const expected = true<cr>const result = true<cr>expect(result).toEqual(expected)<cr><bs>})<cr><esc>5k0f'a
 
 nnoremap <silent> <leader> :WhichKey '<SPACE>'<CR>
 call which_key#register("<SPACE>", "g:which_key_map")
@@ -114,6 +116,8 @@ let g:which_key_map["f"] = "grep"
 let g:which_key_map["p"] = "find file"
 let g:which_key_map["e"] = "explorer"
 let g:which_key_map["h"] = "highlight"
+let g:which_key_map["df"] = "define function"
+let g:which_key_map["dt"] = "define test"
 
 " ------------------------------------------------------------------ "
 "                       EXTERNAL PREFERENCES                         "
