@@ -26,7 +26,7 @@ set colorcolumn=80 " signal when writing long lines of text
 set foldlevel=100 " all folds are open by default
 set foldmethod=indent " allows one to fold the code based on indentation
 set grepprg=rg\ -S\ --vimgrep
-set list " displays list characters (tabs, spaces, etc)
+" set list " displays list characters (tabs, spaces, etc)
 set listchars=tab:>- " changes tabs to be >- visually
 set noswapfile " get rid of those pesky .swp files
 set tabstop=2 shiftwidth=2 smarttab expandtab " spaces > tabs
