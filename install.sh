@@ -86,7 +86,6 @@ then
 fi
 
 cd ~/.vim/bundle/coc.nvim
-./install.sh
 
 echo ""
 echo "----------"
