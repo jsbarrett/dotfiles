@@ -1,4 +1,11 @@
 {
   "html.autoClosingTags": false,
-  "typescript.autoClosingTags": false
+  "typescript.autoClosingTags": false,
+  "rust-analyzer.enable": true,
+  "languageserver": {
+    "move": {
+      "command": "move-analyzer",
+      "filetypes": ["move"]
+    }
+  }
 }

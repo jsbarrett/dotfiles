@@ -80,6 +80,11 @@ if &term =~ "xterm"
   endif
 endif
 
+" (I think) these two lines make sure screen clears after closing vim
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+set termguicolors
 syntax enable " give me pretty colors for syntax
 colorscheme codedark " decent colorscheme
 
@@ -91,7 +96,7 @@ if &term =~ '256color'
 endif
 
 " ------------------------------------------------------------------ "
-"                    MAPPINGS/WHICH KEY SETTINGS                     "
+"                             MAPPINGS                               "
 " ------------------------------------------------------------------ "
 
 let g:mapleader = "\<SPACE>"
@@ -100,8 +105,10 @@ set timeoutlen=300
 nnoremap K :silent grep! "<C-r><C-w>" \| cwindow \| redraw!<CR>
 nnoremap <leader>f :silent grep! "" \| cwindow \| redraw!<S-left><S-left><S-left><S-left><left><left>
 nnoremap <leader>h :set hlsearch!<cr>
+nnoremap <leader>d :call fzf#run({ 'source': 'ls', 'sink': 'read', 'dir': '~/Downloads' })<cr>
+nnoremap <leader>b :Buffers<cr>
 
-nnoremap <leader>df :read ~/.vim/javascript-function.js<CR>ffcw
+nnoremap <leader>df :read ~/.vim/javascript-function.js<CR>wcw
 nnoremap <leader>dt :read ~/.vim/javascript-test.js<cr>0f'a
 nnoremap <leader>h5 :read ~/.vim/html5.html<cr>kdd
 
